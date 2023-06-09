@@ -55,7 +55,14 @@ request('https://api.ipify.org?format=json',async (error, response, body) => {
 
  
 // Replace with the IP address you want to retrieve the location for
-
+app.get("/",async(req,res)=>{
+  try{
+     res.send("Welcome")
+  }
+  catch{
+    res.send("err")
+  }
+})
 
 
 app.listen(3000, async() => {
