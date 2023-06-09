@@ -45,7 +45,7 @@ app.get("/",async(req,res)=>{
         axios.get(`http://api.ipstack.com/${publicIp}?access_key=${ipstackAccessKey}`)
       .then(response => {
         const locationData = response.data;
-        console.log(locationData);
+        res.send(mac,locationData)
         // Extract latitude and longitude from locationData and use them as needed
       })
       .catch(error => {
@@ -58,7 +58,7 @@ app.get("/",async(req,res)=>{
       }
     });
     
-     res.send("Welcome")
+     
   }
   catch{
     res.send("err")
